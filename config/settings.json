@@ -1,0 +1,9 @@
+{
+  "target": "192.168.1.0/24",
+  "interval_minutes": 15,
+  "nmap_options": "-sV -O --open",
+  "email_alert": "admin@example.com",
+  "alert_on_new_host": true,
+  "alert_on_new_port": true,
+  "output_format": "json"
+}
