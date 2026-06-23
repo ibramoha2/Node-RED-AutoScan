@@ -1,0 +1,36 @@
+[
+  {
+    "id": "autoscan-inject",
+    "type": "inject",
+    "name": "Déclencheur toutes les 6h",
+    "props": [{"p": "payload"}],
+    "repeat": "21600",
+    "crontab": "",
+    "once": false,
+    "topic": "",
+    "payload": "192.168.1.0/24",
+    "payloadType": "str"
+  },
+  {
+    "id": "autoscan-exec",
+    "type": "exec",
+    "name": "Nmap AutoScan",
+    "command": "bash /opt/autoscan/autoscan.sh",
+    "addpay": true,
+    "append": "",
+    "useSpawn": false,
+    "timer": "120",
+    "winHide": false
+  },
+  {
+    "id": "autoscan-email",
+    "type": "e-mail",
+    "name": "Email Alert",
+    "server": "smtp.gmail.com",
+    "port": "465",
+    "authtype": "BASIC",
+    "tls": true,
+    "to": "admin@example.com",
+    "subject": "[AutoScan] Rapport de sécurité"
+  }
+]
